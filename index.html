@@ -1,14 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petrica</title>
+    <title>Painter Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Petrica Web Site</h1>
 
-    <h1>Cris João Petrica en la disco</h1>
-    <img src="disco.jpg" />
+<body>
+    <header>
+        <div class="container">
+            <h1>Painter Name</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Discover the Art of [Painter's Name]</h2>
+            <p>Captivating artworks that bring life to spaces and tell stories.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="photo-placeholder">
+                <!-- Placeholder for the painter's photo -->
+                <img src="pintor.jpg" alt="Painter's Photo" />
+            </div>
+            <div class="about-text">
+                <h3>About the Artist</h3>
+                <p>Petrica is a renowned artist whose works explore themes of color, form, and the human
+                    experience. With a unique style that blends traditional techniques and modern concepts, [Painter's
+                    Name] has captivated art enthusiasts worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h3>Gallery</h3>
+            <div class="gallery-grid">
+                <!-- Placeholder images for the artwork -->
+                <div class="gallery-item"><img src="art1.jpg" alt="Artwork 1"></div>
+                <div class="gallery-item"><img src="art2.jpg" alt="Artwork 2"></div>
+                <div class="gallery-item"><img src="art3.jpg" alt="Artwork 3"></div>
+                <div class="gallery-item"><img src="art4.jpg" alt="Artwork 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h3>Contact</h3>
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 [Painter's Name]. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
