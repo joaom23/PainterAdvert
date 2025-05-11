@@ -1,0 +1,318 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #F0F0F0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: #2C3E50;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2C3E50;
+    font-weight: bold;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:hover {
+    color: #E67E22;
+    border-bottom: 2px solid #E67E22;
+}
+
+/* Language Selector */
+.language-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.language-selector button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.language-selector img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.6;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.language-selector button:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.language-selector button.selected img {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .language-selector img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Hero Section */
+#hero {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #E67E22;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #D35400;
+    transform: scale(1.05);
+}
+
+/* About Section */
+#about {
+    padding: 40px 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+#about h2 {
+    margin-bottom: 20px;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Services Section */
+#services {
+    padding: 40px 20px;
+    background-color: #FFFFFF;
+}
+
+#services h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service {
+    text-align: center;
+    padding: 20px;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service i {
+    font-size: 2.5em;
+    color: #E67E22;
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+#projects {
+    padding: 40px 20px;
+    background-color: #F0F0F0;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projects-grid img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projects-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #F0F0F0;
+}
+
+#contact a {
+    color: #2C3E50;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+#contact a:hover {
+    color: #E67E22;
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: 50px auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.company-logo {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.petrica-photo {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+}
