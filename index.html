@@ -10,6 +10,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="paint-roller-solid.svg">
+
 </head>
 
 <body>
@@ -39,7 +41,7 @@
 
     <section id="hero">
         <div class="hero-content">
-            <h2 data-key="heroTitle">Ihr Zuhause in besten Händen</h2>
+            <!-- <h2 data-key="heroTitle">Ihr Zuhause in besten Händen</h2> -->
             <p data-key="heroText">Wir bieten hochwertige Malerarbeiten für Innen- und Außenbereiche.</p>
             <a href="#contact" class="btn" data-key="heroButton">Kontaktieren Sie uns</a>
         </div>
@@ -91,16 +93,35 @@
         <h2 data-key="contactTitle">Kontakt</h2>
         <p><span data-key="emailLabel">E-Mail:</span> email@email.com</p>
         <p>
-            <a href="https://www.instagram.com/petricaginerica" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> <span
-                    data-key="instagramText">Instagram</span></a>
-            <a href="https://www.facebook.com/petrica.ginerica" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> <span
-                    data-key="facebookText">Facebook</span></a>
+            <a 
+                href="https://www.instagram.com/petricaginerica" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> 
+                <span data-key="instagramText">Instagram</span>
+            </a>
+            <a 
+                href="https://www.facebook.com/petrica.ginerica" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                <i class="fab fa-facebook"></i> 
+                <span data-key="facebookText">Facebook</span>
+            </a>
+            <a 
+                href="https://wa.me/410783349408" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                <span data-key="whatsAppText">WhatsApp</span>
+            </a>
         </p>
     </section>
 
     <div id="modal" class="modal">
-        <span class="close">×</span>
+        <span class="close">&times;</span>
+        <button class="prev">←</button>
         <img class="modal-content" id="modal-img">
+        <button class="next">→</button>
         <div id="caption"></div>
     </div>
 

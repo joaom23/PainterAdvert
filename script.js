@@ -31,6 +31,7 @@ const translations = {
     emailLabel: "E-Mail:",
     instagramText: "Instagram",
     facebookText: "Facebook",
+    whatsAppText: "WhatsApp",
     flagDe: "Deutsch",
     flagEn: "Englisch",
     flagEs: "Spanisch",
@@ -73,6 +74,7 @@ const translations = {
     emailLabel: "Email:",
     instagramText: "Instagram",
     facebookText: "Facebook",
+    whatsAppText: "WhatsApp",
     flagDe: "German",
     flagEn: "English",
     flagEs: "Spanish",
@@ -115,6 +117,7 @@ const translations = {
     emailLabel: "Correo electrónico:",
     instagramText: "Instagram",
     facebookText: "Facebook",
+    whatsAppText: "WhatsApp",
     flagDe: "Alemán",
     flagEn: "Inglés",
     flagEs: "Español",
@@ -168,23 +171,63 @@ document.querySelectorAll(".language-selector button").forEach((button) => {
 
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
-const captionText = document.getElementById("caption");
+// const captionText = document.getElementById("caption");
 const closeBtn = document.querySelector(".close");
+const projectImages = document.querySelectorAll("#projects img");
+let currentIndex = 0;
 
-document.querySelectorAll("#projects img").forEach((img) => {
-  img.addEventListener("click", function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerText = this.alt;
+projectImages.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    openModal(img.src, img.alt);
   });
 });
 
-closeBtn.addEventListener("click", function () {
+function openModal(src, alt) {
+  modal.style.display = "flex";
+  modalImg.src = src;
+  //   captionText.textContent = alt;
+  document.body.classList.add("modal-open");
+}
+
+function closeModal() {
   modal.style.display = "none";
+  document.body.classList.remove("modal-open");
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % projectImages.length;
+  const nextImg = projectImages[currentIndex];
+  modalImg.src = nextImg.src;
+  //   captionText.textContent = nextImg.alt;
+}
+
+function showPrev() {
+  currentIndex =
+    (currentIndex - 1 + projectImages.length) % projectImages.length;
+  const prevImg = projectImages[currentIndex];
+  modalImg.src = prevImg.src;
+  //   captionText.textContent = prevImg.alt;
+}
+
+closeBtn.addEventListener("click", closeModal);
+document.querySelector(".modal .next").addEventListener("click", showNext);
+document.querySelector(".modal .prev").addEventListener("click", showPrev);
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
 });
 
-modal.addEventListener("click", function (e) {
-  if (e.target !== modalImg) {
-    modal.style.display = "none";
+document.addEventListener("keydown", (e) => {
+  if (modal.style.display === "flex") {
+    if (e.key === "ArrowRight") {
+      showNext();
+    } else if (e.key === "ArrowLeft") {
+      showPrev();
+    } else if (e.key === "Escape") {
+      closeModal();
+    }
   }
 });
